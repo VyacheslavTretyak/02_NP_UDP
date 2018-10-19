@@ -4,9 +4,32 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ChatUDP"
-        mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        mc:Ignorable="d"		
+        Title="UDP Chat" Height="450" Width="800"
+		FontSize="14"
+		Background="#FFFFBF80">
+	<Window.Resources>
+		<Style TargetType="TextBox">
+			<Setter Property="Background" Value="#FFF6F9B4"/>
+		</Style>
+	</Window.Resources>
     <Grid>
-        
+		<Grid.RowDefinitions>
+			<RowDefinition Height="3*"/>
+			<RowDefinition Height="*"/>
+			<RowDefinition Height="2*"/>
+			<RowDefinition Height="*"/>
+		</Grid.RowDefinitions>
+		<ListBox Grid.Row="0" Name ="ListBoxMessages" Background="#FFF6F9B4" Margin="16">
+			
+		</ListBox>
+		<TextBox Grid.Row="1" Name="TextBoxLogin" Margin="16"></TextBox>
+		<TextBox Grid.Row="2" Name="TextBoxMessage" Margin="16" 
+				 Height="auto"
+				TextWrapping="Wrap"
+				AcceptsReturn="True"
+				HorizontalScrollBarVisibility="Disabled"
+				VerticalScrollBarVisibility="Auto"></TextBox>
+		<Button Grid.Row="3" Name="ButtonSend" Margin="16" HorizontalAlignment="Right" Padding="32 0" Background="#FF8B3131" Foreground="White" IsDefault="True" >Send</Button>
     </Grid>
 </Window>
